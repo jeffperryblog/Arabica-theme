@@ -1,0 +1,27 @@
+<header class="main-header">
+		<center><a href="https://jeffperry.blog"><img src="http://jeffperry.micro.blog/uploads/2019/573a3b6afb.png" width="200px" height="auto"></center>
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="{{ "/" | relLangURL }}">
+				{{ if .Site.Params.logoTitle }}
+					{{ .Site.Params.logoTitle | safeHTML }}
+				{{ else }}
+           			{{ .Site.Title }}
+				{{ end }}
+			</a>
+		</h1>
+		<h2 class="blog-description">{{ .Site.Params.description | safeHTML }}</h2>
+	</div>
+
+	<div class="nav">
+    {{ $currentPage := . }}
+		{{ range .Site.Menus.main }}
+			{{ if .Page.Params.redirect_url }}
+				<a class="nav-" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
+			{{ else }}
+				<a class="nav- {{ if $currentPage.IsMenuCurrent "main" . }}nav-current{{ end }}" role="presentation" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+			{{ end }}
+		{{ end }}
+	</div>
+</header>
+
