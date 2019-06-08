@@ -4,6 +4,7 @@ Custom Theme made from the Arabica Theme for Micro.blog
 ## Colors used for theme
 
 **Main Orange** - #fc7e0f
+
 **Blockquote Red** - #f1592b
 
 
